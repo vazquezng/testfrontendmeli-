@@ -1,0 +1,29 @@
+@import '../variables.scss';
+
+.container{
+  position: relative;
+  input[type=text]{
+    width: 780px;
+    height: 32px;
+    color: $gray;
+    padding: 0;
+    padding-left: 10px;
+    font-size: 18px;
+    margin: 0;
+    border: none;
+    outline: none;
+  }
+
+  div.search{
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $lightgrey;
+    position:absolute;
+    top:0;
+    right: 0;
+    cursor: pointer;
+  }
+}

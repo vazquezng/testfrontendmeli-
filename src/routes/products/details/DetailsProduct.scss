@@ -1,0 +1,63 @@
+@import '../../../components/variables';
+
+.container{
+  .details{
+    .row{
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      .left{
+        width: 680px;
+        text-align: center;
+        img{
+          width: 500px;
+        }
+      }
+      .right{
+        display: flex;
+        flex-direction: column;
+        .condition{
+          font-size: $fontSizeCondition;
+          padding-bottom: $marginMinimum;
+        }
+        .title{
+          font-weight: bold;
+          color: $darkgray;
+          font-size: $fontSizeTitleDetail;
+          padding-bottom: $marginMaximum;
+        }
+        .price{
+          font-size: $fontSizePriceDetail;
+          padding-bottom: $marginMaximum;
+        }
+        .button{
+          background-color: $blue;
+          border-radius: 4px;
+          color:white;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 35px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .description{
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      .title{
+        font-size: $fontSizeTitleDescription;
+        color: $darkmediumgray;
+        padding-bottom: $marginMaximum
+      }
+      .text{
+        font-size: $fontSizeDescription;
+        color: $gray;
+      }
+    }
+  }
+}

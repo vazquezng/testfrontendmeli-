@@ -1,0 +1,39 @@
+/**
+Default styles
+ */
+
+@import './colors';
+
+$marginMinimum: 16px;
+$marginMaximum: 32px;
+
+$fontSizePrice: 24px;
+$fontSizePriceDetail: 46px;
+$fontSizeTitle:18px;
+$fontSizeTitleDetail:24px;
+$fontSizeCity: 12px;
+$fontSizeCondition: 14px;
+$fontSizeTitleDescription: 28px;
+$fontSizeDescription: 16px;
+:root {
+  /*
+   * Typography
+   * ======================================================================== */
+
+  --font-family-base: 'Segoe UI', 'HelveticaNeue-Light', sans-serif;
+
+  /*
+   * Layout
+   * ======================================================================== */
+
+  --max-content-width: 1000px;
+
+  /*
+   * Media queries breakpoints
+   * ======================================================================== */
+
+  --screen-xs-min: 480px;  /* Extra small screen / phone */
+  --screen-sm-min: 768px;  /* Small screen / tablet */
+  --screen-md-min: 992px;  /* Medium screen / desktop */
+  --screen-lg-min: 1200px; /* Large screen / wide desktop */
+}

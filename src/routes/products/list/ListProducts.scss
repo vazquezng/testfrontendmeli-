@@ -1,0 +1,63 @@
+@import '../../../components/variables';
+
+.container{
+  .containerItem{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: $marginMinimum;
+    padding-bottom: $marginMinimum;
+    div.details{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex:1;
+      .header{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: 590px;
+        margin-bottom: $marginMaximum;
+        >div{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .price{
+            font-size: $fontSizePrice;
+          }
+          img.freeShipping{
+            width: 18px;
+            margin-left: 5px;
+          }
+        }
+
+        .city{
+          font-size: $fontSizeCity;
+          display: block;
+        }
+      }
+
+      .title{
+        font-size: $fontSizeTitle;
+        display: block;
+        a{
+          text-decoration: none;
+          color: inherit;
+        }
+
+      }
+
+    }
+    img.thumbnail{
+      width: 180px;
+      height: 180px;
+      border-radius: 4px;
+      margin-right: $marginMinimum;
+    }
+  }
+  hr{
+    margin: 0;
+    border-color:$lightgrey;
+  }
+}

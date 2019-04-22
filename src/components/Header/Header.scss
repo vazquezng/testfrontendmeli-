@@ -1,0 +1,15 @@
+@import '../variables';
+
+
+.root{
+  background-color: $yellow;
+  width: 100%;
+  .container{
+    margin: 0 auto;
+    height: 50px;
+    width: 860px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
