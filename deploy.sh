@@ -9,4 +9,4 @@ yarn run build -- --release
 echo " ==== node build/server.js ===== "
 node build/server.js
 
-echo "success deploy => http://localhost:8000/"
+echo "success deploy => http://localhost:3000/"
