@@ -16,6 +16,7 @@
       .right{
         display: flex;
         flex-direction: column;
+        width: 220px;
         .condition{
           font-size: $fontSizeCondition;
           padding-bottom: $marginMinimum;

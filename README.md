@@ -6,8 +6,10 @@
 - yarn
 - yarn run start
 
-##Deploy in Docker
+## Deploy release
 
-- docker-compose build
-- docker-compose up -d
-- docker system prune -f
+- ./deploy.sh
+
+## Deploy release in Docker
+
+- ./deploy-docker.sh
