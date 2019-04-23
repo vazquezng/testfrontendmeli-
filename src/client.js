@@ -9,8 +9,6 @@ import deepForceUpdate from "react-deep-force-update";
 import queryString from "query-string";
 import { createPath } from "history/PathUtils";
 import axios from "axios";
-import { IntlProvider } from 'react-intl';
-
 
 import App from "./components/App";
 import history from "./history";
@@ -72,7 +70,8 @@ async function onLocationChange(location, action) {
     }
 
     const renderReactApp = isInitialRender ? ReactDOM.hydrate : ReactDOM.render;
-    appInstance = renderReactApp(<App context={context}>{route.component}</App>,
+    appInstance = renderReactApp(
+      <App context={context}>{route.component}</App>,
       container,
       () => {
         if (isInitialRender) {

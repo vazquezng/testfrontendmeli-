@@ -58,10 +58,7 @@ class Html extends React.Component {
             <link key={script} rel="preload" href={script} as="script" />
           ))}
           {/* <link rel="manifest" href="/manifest.json" / > */}
-          <link
-              rel="shortcut icon"
-              href="/favicon.ico"
-            />
+          <link rel="shortcut icon" href="/favicon.ico" />
           {styles.map(style => (
             <style
               key={style.id}

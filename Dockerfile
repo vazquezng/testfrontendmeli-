@@ -1,21 +1,15 @@
-FROM node:8.10.0-alpine
+FROM jmfirth/webpack:8
 
-# Set a working directory
+# Create app directory
 WORKDIR /usr/src/app
 
-COPY ./build/package.json .
-COPY ./build/yarn.lock .
+COPY package.json /usr/src/app
+COPY yarn.lock /usr/src/app
 
 # Install Node.js dependencies
-RUN yarn install --production --no-progress
+RUN yarn --ignore-engines --network-timeout 1000000
 
-# Copy application files
-COPY ./build .
+# Bundle app source
+COPY . /usr/src/app
 
-# Run the container under "node" user by default
-USER node
-
-# Set NODE_ENV env variable to "production" for faster expressjs
-ENV NODE_ENV production
-
-CMD [ "node", "server.js" ]
+RUN yarn run build -- --release

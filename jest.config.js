@@ -1,12 +1,3 @@
-/**
- * React Starter Kit (https://www.reactstarterkit.com/)
- *
- * Copyright © 2014-present Kriasoft, LLC. All rights reserved.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE.txt file in the root directory of this source tree.
- */
-
 // Jest configuration
 // https://facebook.github.io/jest/docs/en/configuration.html
 module.exports = {
@@ -34,20 +25,20 @@ module.exports = {
 
   // https://facebook.github.io/jest/docs/en/configuration.html#collectcoveragefrom-array
   collectCoverageFrom: [
-    'src/**/*.{js,jsx}',
-    '!**/node_modules/**',
-    '!**/vendor/**',
+    "src/**/*.{js,jsx}",
+    "!**/node_modules/**",
+    "!**/vendor/**"
   ],
 
   // https://facebook.github.io/jest/docs/en/configuration.html#coveragedirectory-string
-  coverageDirectory: '<rootDir>/coverage', // [string]
+  coverageDirectory: "<rootDir>/coverage", // [string]
 
   // coveragePathIgnorePatterns: // [array<string>]
   // coverageReporters: [], // [array<string>]
   // coverageThreshold: {}, // [object]
 
   globals: {
-    __DEV__: true,
+    __DEV__: true
   },
 
   // https://facebook.github.io/jest/docs/en/configuration.html#mapcoverage-boolean
@@ -55,14 +46,14 @@ module.exports = {
 
   // The default extensions Jest will look for.
   // https://facebook.github.io/jest/docs/en/configuration.html#modulefileextensions-array-string
-  moduleFileExtensions: ['js', 'json', 'jsx', 'node'],
+  moduleFileExtensions: ["js", "json", "jsx", "node"],
 
   // moduleDirectories: // [array<string>]
 
   // A map from regular expressions to module names that allow to stub out resources,
   // like images or styles with a single module.
   moduleNameMapper: {
-    '\\.(css|less|styl|scss|sass|sss)$': 'identity-obj-proxy',
+    "\\.(css|less|styl|scss|sass|sss)$": "identity-obj-proxy"
   },
 
   // modulePathIgnorePatterns: // [array<string>]
@@ -90,13 +81,13 @@ module.exports = {
   // timers: // [string]
 
   transform: {
-    '\\.(js|jsx|mjs)$': '<rootDir>/node_modules/babel-jest',
-    '^(?!.*\\.(js|jsx|json|css|less|styl|scss|sass|sss)$)':
-      '<rootDir>/tools/lib/fileTransformer.js',
+    "\\.(js|jsx|mjs)$": "<rootDir>/node_modules/babel-jest",
+    "^(?!.*\\.(js|jsx|json|css|less|styl|scss|sass|sss)$)":
+      "<rootDir>/tools/lib/fileTransformer.js"
   },
 
   // transformIgnorePatterns: // [array<string>]
   // unmockedModulePathPatterns: // [array<string>]
 
-  verbose: true, // [boolean]
+  verbose: true // [boolean]
 };

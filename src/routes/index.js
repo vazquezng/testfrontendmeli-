@@ -15,14 +15,16 @@ const routes = {
       load: () => import(/* webpackChunkName: 'home' */ "./home")
     },
     {
-      name:"listProducts",
+      name: "listProducts",
       path: "/items",
-      load: () => import(/* webpackChunkName: 'listProducts' */ "./products/list")
+      load: () =>
+        import(/* webpackChunkName: 'listProducts' */ "./products/list")
     },
     {
-      name:"detailsProduct",
+      name: "detailsProduct",
       path: "/items/:id",
-      load: () => import(/* webpackChunkName: 'detailsProducts' */ "./products/details")
+      load: () =>
+        import(/* webpackChunkName: 'detailsProducts' */ "./products/details")
     },
     // Wildcard routes, e.g. { path: '(.*)', ... } (must go last)
     {

@@ -8,7 +8,7 @@
       align-items: flex-start;
       .left{
         width: 680px;
-        text-align: center;
+        text-align: left;
         img{
           width: 500px;
         }
@@ -49,6 +49,7 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;
+      margin-top: $marginMaximum*2;
       .title{
         font-size: $fontSizeTitleDescription;
         color: $darkmediumgray;
