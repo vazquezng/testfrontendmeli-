@@ -6,6 +6,8 @@ import fs from "fs";
 import path from "path";
 import webpack from "webpack";
 import WebpackAssetsManifest from "webpack-assets-manifest";
+import UglifyJsPlugin from "uglifyjs-webpack-plugin";
+import { GenerateSW } from "workbox-webpack-plugin";
 import nodeExternals from "webpack-node-externals";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 import overrideRules from "./lib/overrideRules";
@@ -359,7 +361,12 @@ const clientConfig = {
         }
       }
     }),
-
+    new GenerateSW({
+      swDest: `${BUILD_DIR}/public/swWorkbox.js`,
+      clientsClaim: true,
+      skipWaiting: true,
+      cacheId: `melitest${new Date().getTime()}`
+    }),
     ...(isDebug
       ? []
       : [
@@ -371,14 +378,46 @@ const clientConfig = {
 
   // Move modules that occur in multiple entry chunks to a new entry chunk (the commons chunk).
   optimization: {
+    minimize: !isDebug,
+    minimizer: [
+      // we specify a custom UglifyJsPlugin here to get source maps in production
+      new UglifyJsPlugin({
+        parallel: true,
+        // cache: this.options.build.cache,
+        sourceMap: false,
+        extractComments: {
+          filename: "LICENSES"
+        },
+        uglifyOptions: {
+          output: {
+            comments: /^\**!|@preserve|@license|@cc_on/
+          }
+        }
+      })
+    ],
     splitChunks: {
+      minSize: 30000,
+      maxSize: 0,
+      minChunks: 3,
+      maxAsyncRequests: 5,
+      maxInitialRequests: 3,
+      automaticNameDelimiter: "~",
+      name: true,
+      chunks: "all",
       cacheGroups: {
-        commons: {
-          chunks: "initial",
+        vendors: {
           test: /[\\/]node_modules[\\/]/,
-          name: "vendors"
+          priority: -10
+        },
+        default: {
+          minChunks: 4,
+          priority: -20,
+          reuseExistingChunk: true
         }
       }
+    },
+    runtimeChunk: {
+      name: "manifest"
     }
   },
 
